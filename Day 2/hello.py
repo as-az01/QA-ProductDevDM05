@@ -90,3 +90,4 @@ valid_loan_data.shape[0]
 print(dropCount)
 
 valid_loan_data.to_csv('load_data_cleaned.csv')
+
