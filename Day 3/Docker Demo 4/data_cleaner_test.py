@@ -11,6 +11,7 @@ data['Book Returned'] = pd.to_datetime(data['Book Returned'], format='mixed')
 
 na_dropped_data = data.dropna()
 data_enriched = na_dropped_data.copy()
+data_enriched.to_csv('/data/data_enriched.csv')
 
 def enrich_dateDuration(colA, colB, df=data_enriched):
     df['date_delta'] = (df[colA] - df[colB]).dt.days
@@ -28,6 +29,8 @@ class TestDataCleaning(unittest.TestCase):
         )
 
         assert_series_equal(result, expected)
+
+
 
 if __name__ == "__main__":
     unittest.main()
